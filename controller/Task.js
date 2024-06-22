@@ -45,7 +45,6 @@ export const getAllTask = async (req, res) => {
 };
 
 export const createNewTask = async (req, res) => {
-  console.log(req.body);
   const { title, description, details, dueDate } = req.body;
 
   if (!title || !description || !details || !dueDate) {
@@ -83,7 +82,8 @@ export const createNewTask = async (req, res) => {
 };
 
 export const deleteTask = async (req, res) => {
-  const taskId = req.body.taskId;
+  const { taskId } = req.params;
+
   try {
     const deletedTask = await Task.findByIdAndDelete(taskId);
 
@@ -110,6 +110,7 @@ export const deleteTask = async (req, res) => {
 
 export const editTask = async (req, res) => {
   const { taskId, title, description, details, dueDate } = req.body;
+  console.log(taskId);
 
   try {
     const updatedTask = await Task.findByIdAndUpdate(
