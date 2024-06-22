@@ -18,7 +18,7 @@ app.use(
     credentials: true,
     origin: [
       "http://localhost:5173",
-      "https://task-manager-seven-theta.vercel.app/",
+      "https://task-manager-seven-theta.vercel.app",
     ],
   })
 );
