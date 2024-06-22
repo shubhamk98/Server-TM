@@ -58,12 +58,6 @@ export const createNewTask = async (req, res) => {
   const taskDueDate = new Date(dueDate);
   const today = new Date();
 
-  // if (taskDueDate < today) {
-  //   return res.status(400).json({
-  //     success: false,
-  //     message: "Due date cannot be in the past. Please select a future date.",
-  //   });
-  // }
 
 
   try {
