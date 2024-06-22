@@ -110,7 +110,6 @@ export const deleteTask = async (req, res) => {
 
 export const editTask = async (req, res) => {
   const { taskId, title, description, details, dueDate } = req.body;
-  console.log(taskId);
 
   try {
     const updatedTask = await Task.findByIdAndUpdate(
